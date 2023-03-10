@@ -1,0 +1,23 @@
+.app-container-navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: #eee;
+  margin-bottom: 20px;
+}
+.app-container-navbar__item {
+  margin: 0 5px;
+  font-weight: 600;
+  font-size: 25px;
+}
+.app-container-navbar__item a {
+  color: #bbb;
+  text-decoration: none;
+}
+.app-container-navbar__item a:hover {
+  color: #333333;
+}
+.app-container-navbar__item a.active {
+  color: #333333;
+}
