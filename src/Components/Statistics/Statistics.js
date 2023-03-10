@@ -13,12 +13,12 @@ export default function SingleColumnDemo() {
     fetch(`https://api.covid19api.com/summary`)
       .then((res) => res.json())
       .then((data) => {
-        data.success == undefined ? setCase(data.Countries) : setCase(countries);
+        data.success === undefined ? setCase(data.Countries) : setCase(countries);
       })
       .catch((err) => {
         console.log(err.message);
       });
-  }, [searchInput == '' && searchInput]);
+  }, [searchInput === '' && searchInput]);
 
   useEffect(() => {
     if (searchInput?.length > 0) {
@@ -32,12 +32,16 @@ export default function SingleColumnDemo() {
 
   return (
     <div>
-      <input
-        type="text"
-        placeholder="Search here"
-        className='search-box'
-        onChange={(e) => setSearchInput(e.target.value)}
-        value={searchInput} />
+      <div className='search-box'
+      >
+        <input
+          type="text"
+          placeholder="Search here on country name ..."
+          className='search'
+          onChange={(e) => setSearchInput(e.target.value)}
+          value={searchInput} />
+      </div>
+
       <div className="card">
         <DataTable value={cases} paginator rows={5} rowsPerPageOptions={[5, 10, 25, 50]}
           tableStyle={{ minWidth: '50rem' }}>

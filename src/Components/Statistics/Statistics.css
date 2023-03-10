@@ -1,8 +1,23 @@
-
 .card {
     background: var(--surface-card);
     padding: 2rem;
     border-radius: 10px;
     margin-bottom: 1rem;
     overflow: auto !important;
+}
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.search {
+    padding: .6rem;
+    border-radius: 20px;
+    border: 1px solid gray;
+    width: 30%;
+
 }

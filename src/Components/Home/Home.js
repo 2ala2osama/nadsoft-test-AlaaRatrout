@@ -20,12 +20,9 @@ const Home = () => {
     fetch(`https://api.covid19api.com/summary`)
       .then((res) => res.json())
       .then((data) => {
-        console.log("🚀 ~ file: Home.js:23 ~ .then ~ data:", data, data.success)
-        data.success != undefined ? setPosts(data.Global) : setPosts(Global);
+        data.success === undefined ? setPosts(data.Global) : setPosts(Global);
       })
       .catch((err) => {
-        console.log("🚀 ~ file: Home.js:27 ~ useEffect ~ err:", err)
-        setPosts(Global);
         console.log(err.message);
       });
   }, []);
